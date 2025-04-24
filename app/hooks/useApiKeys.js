@@ -147,7 +147,7 @@ export const useApiKeys = () => {
 
   const startEditing = (key) => {
     setEditingKey(key);
-    setEditName(key.name);
+    setEditName(key?.name || '');
   };
 
   const cancelEditing = () => {

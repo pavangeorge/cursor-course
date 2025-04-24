@@ -1,6 +1,6 @@
 export const ApiKeyModal = ({ 
   editingKey, 
-  editName, 
+  editName = '',
   setEditName, 
   onCancel, 
   onCreate, 
@@ -54,7 +54,7 @@ export const ApiKeyModal = ({
             </button>
             <button
               onClick={editingKey?.id ? onUpdate : onCreate}
-              disabled={isLoading}
+              disabled={isLoading || !editName.trim()}
               className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:bg-purple-400"
             >
               {isLoading ? 'Processing...' : editingKey?.id ? 'Save Changes' : 'Create'}
