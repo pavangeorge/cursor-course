@@ -29,15 +29,15 @@ export default function Dashboard() {
         isCollapsed={isSidebarCollapsed} 
         onToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)} 
       />
-      <div className={`flex-1 min-h-screen bg-gradient-to-br from-rose-100 via-purple-100 to-blue-200 p-8 transition-all duration-300 ${isSidebarCollapsed ? 'ml-0' : 'ml-0'}`}>
+      <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-x-hidden">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Current Plan Section */}
           <div className="bg-gradient-to-r from-rose-400 via-purple-400 to-blue-500 rounded-xl shadow-lg overflow-hidden">
-            <div className="p-8 text-white">
-              <div className="flex justify-between items-start mb-6">
+            <div className="p-4 sm:p-6 md:p-8 text-white">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-0 mb-6">
                 <div>
                   <div className="text-sm font-medium mb-2">CURRENT PLAN</div>
-                  <h2 className="text-3xl font-bold mb-4">Researcher</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-4">Researcher</h2>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">API Usage</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ export default function Dashboard() {
                     </svg>
                   </div>
                 </div>
-                <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg backdrop-blur-sm transition-colors">
+                <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg backdrop-blur-sm transition-colors w-full sm:w-auto">
                   Manage Plan
                 </button>
               </div>
@@ -94,7 +94,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
 
       {/* Modal for Create/Edit */}
       {editingKey && (

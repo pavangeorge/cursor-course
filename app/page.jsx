@@ -14,12 +14,12 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header className="px-4 lg:px-6 h-14 flex items-center border-b">
+      <header className="px-4 lg:px-6 h-14 flex items-center justify-between border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
         <Link className="flex items-center justify-center" href="/">
           <Github className="h-6 w-6 mr-2" />
           <span className="font-bold text-xl">szilly</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <nav className="hidden md:flex gap-4 sm:gap-6">
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#features">
@@ -43,6 +43,11 @@ export default function LandingPage() {
             </Link>
           )}
         </nav>
+        <button className="md:hidden p-2" aria-label="Menu">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
         <div className="flex items-center gap-2 ml-4">
           {session ? (
             <div className="flex items-center gap-4">
@@ -94,7 +99,7 @@ export default function LandingPage() {
                 <Button 
                   size="lg" 
                   className="h-12 px-8"
-                  onClick={() => session ? window.location.href = '/dashboard' : signIn('google')}
+                  onClick={() => session ? window.location.href = '/dashboards' : signIn('google')}
                 >
                   {session ? 'Go to Dashboard' : 'Start Analyzing'}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -120,18 +125,15 @@ export default function LandingPage() {
         {/* Features Section */}
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-            <div
-              className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Powerful Repository Analysis</h2>
-                <p
-                  className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">Powerful Repository Analysis</h2>
+                <p className="max-w-[900px] text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl">
                   Everything you need to understand and track GitHub repositories at scale
                 </p>
               </div>
             </div>
-            <div
-              className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+            <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
               <Card className="relative overflow-hidden">
                 <CardHeader>
                   <BarChart3 className="h-10 w-10 text-primary" />
@@ -197,17 +199,15 @@ export default function LandingPage() {
         {/* Pricing Section */}
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-            <div
-              className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Simple, Transparent Pricing</h2>
-                <p
-                  className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">Simple, Transparent Pricing</h2>
+                <p className="max-w-[900px] text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl">
                   Start free and scale as you grow. No hidden fees, no surprises.
                 </p>
               </div>
             </div>
-            <div className="grid gap-6 lg:grid-cols-3 lg:gap-8 max-w-5xl mx-auto mt-12">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 max-w-5xl mx-auto mt-12">
               {/* Free Tier */}
               <Card className="relative">
                 <CardHeader>
@@ -349,7 +349,7 @@ export default function LandingPage() {
                 <Button 
                   size="lg" 
                   className="h-12 px-8"
-                  onClick={() => session ? window.location.href = '/dashboard' : signIn('google')}
+                  onClick={() => session ? window.location.href = '/dashboards' : signIn('google')}
                 >
                   {session ? 'Go to Dashboard' : 'Start Free Analysis'}
                   <ArrowRight className="ml-2 h-4 w-4" />
