@@ -245,6 +245,7 @@ export default function LandingPage() {
 
               {/* Pro Tier */}
               <Card className="relative border-primary">
+              <Badge className="absolute top-2 right-2 bg-yellow-500 text-white">Coming Soon</Badge>
                 <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary">Most Popular</Badge>
                 <CardHeader>
                   <CardTitle className="text-2xl">Pro</CardTitle>
@@ -281,12 +282,15 @@ export default function LandingPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">Start Pro Trial</Button>
+                  <Button className="w-full" disabled>
+                    Coming Soon
+                  </Button>               
                 </CardFooter>
               </Card>
 
               {/* Enterprise Tier */}
               <Card className="relative">
+              <Badge className="absolute top-2 right-2 bg-yellow-500 text-white">Coming Soon</Badge>
                 <CardHeader>
                   <CardTitle className="text-2xl">Enterprise</CardTitle>
                   <CardDescription>For large organizations</CardDescription>
@@ -322,8 +326,8 @@ export default function LandingPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full" variant="outline">
-                    Contact Sales
+                  <Button className="w-full" variant="outline" disabled>
+                    Coming Soon
                   </Button>
                 </CardFooter>
               </Card>
